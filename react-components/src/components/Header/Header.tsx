@@ -5,7 +5,9 @@ import './Header.scss';
 const Header = (): JSX.Element => {
   return (
     <header className="page-header">
-      <SearchBar placeholder="Search" />
+      <div className="container">
+        <SearchBar placeholder="Search" />
+      </div>
     </header>
   );
 };
