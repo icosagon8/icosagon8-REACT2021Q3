@@ -2,12 +2,11 @@
   display: flex;
   align-items: center;
   border: 5px solid var(--search-bar-color-primary);
-  max-width: 780px;
-  height: 80px;
+  max-width: 575px;
+  height: 75px;
   border-radius: 50px;
   padding: 0 30px;
   margin: 0 auto;
-  background-color: var(--search-bar-bg-color);
 
   &__search {
     border: 0;
