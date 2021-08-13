@@ -1,0 +1,26 @@
+.details {
+  &__table {
+    border-collapse: collapse;
+
+    tr:nth-child(2n) {
+      background-color: #e6e6e6;
+    }
+
+    tr {
+      background-color: #f6f6f6;
+    }
+
+    td {
+      padding: 6px 20px;
+    }
+  }
+
+  &__link {
+    color: #009176;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

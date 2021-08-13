@@ -1,0 +1,19 @@
+.card {
+  width: 250px;
+  height: 175px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+  padding: 10px;
+  background-color: #c1a56e;
+  color: white;
+  transition: box-shadow 1s;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 50%);
+  }
+
+  &__name {
+    text-transform: uppercase;
+  }
+}

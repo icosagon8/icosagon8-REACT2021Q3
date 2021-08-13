@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+
+  &__pages-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__page {
+    outline: 0;
+    text-align: center;
+    width: 35px;
+  }
+
+  &__count-chooser {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__dropdown {
+    outline: 0;
+  }
+}
