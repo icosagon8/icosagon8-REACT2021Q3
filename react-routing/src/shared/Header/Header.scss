@@ -1,0 +1,17 @@
+.header {
+  padding-top: 26px;
+  padding-bottom: 26px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #c1a56e;
+    margin: 0;
+  }
+}

@@ -9,7 +9,8 @@ const devServer = (isDev) => !isDev ? {} : {
   devServer: {
     open: true,
     port: 8080,
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
   },
 };
 
@@ -25,6 +26,7 @@ module.exports = ({ development }) => ({
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[hash][ext]',
+    publicPath: '/'
   },
   module: {
     rules: [

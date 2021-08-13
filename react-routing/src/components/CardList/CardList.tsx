@@ -11,5 +11,5 @@ export function CardList({ cards }: Props): JSX.Element {
   // eslint-disable-next-line no-underscore-dangle
   const cardItems = cards.map((card) => <CardItem key={card._id} card={card} />);
 
-  return <ul className="card-list">{cardItems}</ul>;
+  return <div className="card-list">{cardItems}</div>;
 }
