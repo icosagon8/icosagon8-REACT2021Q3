@@ -1,5 +1,5 @@
 {
-  "name": "react-routing",
+  "name": "react-with-redux",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack",
