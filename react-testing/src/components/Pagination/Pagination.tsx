@@ -35,6 +35,7 @@ export function Pagination({ limit, setLimit, setCurrentPage, pages }: Props): J
           maxLength={pages}
           onKeyDown={handleInputKeyDown}
           onChange={handleInputChange}
+          data-testid="input-page-number"
         />
         <span className="pagination__pages">/ {pages}</span>
       </div>

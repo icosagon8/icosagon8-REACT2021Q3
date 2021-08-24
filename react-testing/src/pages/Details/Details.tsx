@@ -33,57 +33,57 @@ export function Details(): JSX.Element {
           {isCorrectProperty(character?.race) && (
             <tr>
               <td>Race</td>
-              <td>{character?.race}</td>
+              <td>{character!.race}</td>
             </tr>
           )}
           {isCorrectProperty(character?.birth) && (
             <tr>
               <td>Birth</td>
-              <td>{character?.birth}</td>
+              <td>{character!.birth}</td>
             </tr>
           )}
           {isCorrectProperty(character?.death) && (
             <tr>
               <td>Death</td>
-              <td>{character?.death}</td>
+              <td>{character!.death}</td>
             </tr>
           )}
           {isCorrectProperty(character?.gender) && (
             <tr>
               <td>Gender</td>
-              <td>{character?.gender}</td>
+              <td>{character!.gender}</td>
             </tr>
           )}
           {isCorrectProperty(character?.hair) && (
             <tr>
               <td>Hair</td>
-              <td>{character?.hair}</td>
+              <td>{character!.hair}</td>
             </tr>
           )}
           {isCorrectProperty(character?.height) && (
             <tr>
               <td>Height</td>
-              <td>{character?.height}</td>
+              <td>{character!.height}</td>
             </tr>
           )}
           {isCorrectProperty(character?.realm) && (
             <tr>
               <td>Realm</td>
-              <td>{character?.realm}</td>
+              <td>{character!.realm}</td>
             </tr>
           )}
           {isCorrectProperty(character?.spouse) && (
             <tr>
               <td>Spouse</td>
-              <td>{character?.spouse}</td>
+              <td>{character!.spouse}</td>
             </tr>
           )}
           {isCorrectProperty(character?.wikiUrl) && (
             <tr>
               <td>WikiUrl</td>
               <td>
-                <a className="details__link" href={character?.wikiUrl} target="blank">
-                  {character?.wikiUrl}
+                <a className="details__link" href={character!.wikiUrl} target="blank">
+                  {character!.wikiUrl}
                 </a>
               </td>
             </tr>
