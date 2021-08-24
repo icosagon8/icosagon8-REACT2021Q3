@@ -1,0 +1,50 @@
+.sorting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+
+  &__btn-container {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__btn {
+    color: #ffffff;
+    background-color: #009176;
+    border: 0;
+    cursor: pointer;
+    padding: 5px 25px;
+    border-radius: 14px;
+    position: relative;
+
+    &--asc,
+    &--desc {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--asc {
+      &::after {
+        border-width: 0 5px 10px 5px;
+        border-color: transparent transparent #ffffff transparent;
+      }
+    }
+
+    &--desc {
+      &::after {
+        border-width: 10px 5px 0 5px;
+        border-color: #ffffff transparent transparent transparent;
+      }
+    }
+  }
+}
