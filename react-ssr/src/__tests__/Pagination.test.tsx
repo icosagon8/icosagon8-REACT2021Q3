@@ -1,14 +1,17 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from '../App';
-import { store } from '../store/store';
+import { store } from '../client';
 
 describe('<Pagination />', () => {
   test('Select value change correctly', () => {
     const { getByLabelText } = render(
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     );
 
@@ -20,7 +23,9 @@ describe('<Pagination />', () => {
   test('Input value change correctly', () => {
     const { getByTestId } = render(
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     );
 
@@ -32,7 +37,9 @@ describe('<Pagination />', () => {
   test('Entering page value', () => {
     const { getByTestId } = render(
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     );
 

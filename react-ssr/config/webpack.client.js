@@ -20,13 +20,12 @@ module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
-    main: './src/index.tsx',
+    main: './src/client.tsx',
   },
   output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[hash][ext]',
-    publicPath: '/'
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../dist/client'),
+    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
@@ -55,7 +54,7 @@ module.exports = ({ development }) => ({
   },
   plugins: [
     ...esLintPlugin(development),
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new CopyPlugin({
       patterns: [{

@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import { store } from '../store/store';
 import { Details } from '../pages/Details/Details';
+import { store } from '../client';
 
 beforeEach(() => {
   fetchMock.resetMocks();

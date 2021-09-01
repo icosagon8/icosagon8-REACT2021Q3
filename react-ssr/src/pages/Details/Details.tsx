@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Loader } from '../../components/Loader/Loader';
 import { fetchCharacterById } from '../../store/actions/fetchCharacterById';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { RootState, Store } from '../../store/store';
 import './Details.scss';
 
 interface RouteParams {
@@ -93,3 +95,16 @@ export function Details(): JSX.Element {
     </React.Fragment>
   );
 }
+
+const mapStateToProps = (state: RootState) => {
+  return { data: state.character.data, isLoading: state.character.isLoading };
+};
+
+const fetchInitialData = (store: Store, param: string) => {
+  return store.dispatch(fetchCharacterById(param));
+};
+
+export default {
+  component: connect(mapStateToProps, { fetchCharacterById })(Details),
+  fetchInitialData,
+};

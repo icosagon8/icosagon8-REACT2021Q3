@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getCharacter, getCharacterSuccess, getCharacterFailure } from '../slices/characterSlice';
 

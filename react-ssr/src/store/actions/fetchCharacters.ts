@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { PageModel } from '../../models/PageModel';
 import { getCharacters, getCharactersFailure, getCharactersSuccess } from '../slices/charactersSlice';

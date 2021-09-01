@@ -4,7 +4,7 @@ export interface DataModel {
   docs: DocsModel[];
   total: number;
   limit: number;
-  offset: number;
+  offset?: number;
   page: number;
   pages: number;
 }

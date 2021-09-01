@@ -1,15 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Details } from './pages/Details/Details';
 import { Header } from './shared/Header/Header';
 import { NotFound } from './pages/404';
+import { ROUTES } from './routes';
 
 export function App(): JSX.Element {
   return (
-    <Router>
+    <React.Fragment>
       <Header />
       <main className="container">
         <Route
@@ -18,9 +16,9 @@ export function App(): JSX.Element {
               <CSSTransition key={location.key} timeout={450} classNames="fade">
                 <div className="page">
                   <Switch location={location}>
-                    <Route exact path="/" component={Home} />
-                    <Route exact strict path="/about" component={About} />
-                    <Route exact strict path="/details/:id" component={Details} />
+                    {ROUTES.map((route) => (
+                      <Route {...route} key={route.path} />
+                    ))}
                     <Route component={NotFound} />
                   </Switch>
                 </div>
@@ -29,6 +27,6 @@ export function App(): JSX.Element {
           )}
         />
       </main>
-    </Router>
+    </React.Fragment>
   );
 }

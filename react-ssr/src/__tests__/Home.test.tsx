@@ -1,8 +1,9 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from '../App';
-import { store } from '../store/store';
+import { store } from '../client';
 
 beforeEach(() => {
   fetchMock.resetMocks();
@@ -12,7 +13,9 @@ describe('<Home />', () => {
   test('Renders <Sorting /> component', () => {
     const { getByText } = render(
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     );
 
@@ -59,7 +62,9 @@ describe('<Home />', () => {
 
     const { findByText } = render(
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     );
 
@@ -94,7 +99,9 @@ describe('<Home />', () => {
 
     const { getByRole } = render(
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     );
 

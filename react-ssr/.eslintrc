@@ -48,7 +48,9 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-underscore-dangle": ["error", { "allow": ["__PRELOADED_STATE__"] }]
   },
   "settings": {
     "import/resolver": {
