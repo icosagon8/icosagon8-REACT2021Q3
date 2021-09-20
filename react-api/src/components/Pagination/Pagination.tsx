@@ -12,7 +12,9 @@ export function Pagination({ limit, setLimit, setCurrentPage, pages }: Props): J
   const [page, setPage] = useState<number>(1);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPage(+event.target.value);
+    let value = Number(event.target.value);
+    if (pages && value > pages) value = pages;
+    setPage(Number.isNaN(value) ? 0 : value);
   };
 
   const handleInputKeyDown = (event: React.KeyboardEvent) => {
@@ -23,6 +25,8 @@ export function Pagination({ limit, setLimit, setCurrentPage, pages }: Props): J
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setLimit(+event.target.value);
+    setPage(1);
+    setCurrentPage(1);
   };
 
   return (

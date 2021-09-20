@@ -18,7 +18,7 @@ export function App(): JSX.Element {
   useEffect(() => {
     const headers = {
       Accept: 'application/json',
-      Authorization: 'Bearer epl1FjsX01RLrlC4cVqe',
+      Authorization: `Bearer ${process.env.API_KEY}`,
     };
 
     async function fetchData(): Promise<void> {
@@ -36,7 +36,7 @@ export function App(): JSX.Element {
         setData(json);
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.log(e.message);
+        console.log((e as Error).message);
       } finally {
         setIsLoading(false);
       }
