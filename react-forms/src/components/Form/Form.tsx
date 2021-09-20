@@ -2,6 +2,7 @@ import React from 'react';
 import { CardModel } from '../../models/cardModel';
 import { ErrorsModel } from '../../models/errorsModel';
 import { Switch } from '../Switch/Switch';
+import { TextField } from '../TextField/TextField';
 import './Form.scss';
 
 interface Props {
@@ -90,52 +91,48 @@ export class Form extends React.Component<Props, State> {
       notify: false,
       isChecked: true,
     });
+
+    setTimeout(() => this.setState({ isSuccess: false }), 3000);
   }
 
   render(): JSX.Element {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <div className="form__group">
-          <label className="form__label">
-            Name:
-            {this.state.errors.name !== undefined && <span className="form__error"> Name is invalid</span>}
-            <input
-              className="form__field"
-              type="text"
-              name="name"
-              autoComplete="off"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-          </label>
+          <TextField
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+            label="Name"
+            autoComplete="off"
+            errorName={this.state.errors.name}
+            errorText="Name is invalid"
+          />
         </div>
         <div className="form__group">
-          <label className="form__label">
-            Surname:
-            {this.state.errors.surname !== undefined && <span className="form__error"> Surname is invalid</span>}
-            <input
-              className="form__field"
-              type="text"
-              name="surname"
-              autoComplete="off"
-              value={this.state.surname}
-              onChange={this.handleChange}
-            />
-          </label>
+          <TextField
+            type="text"
+            name="surname"
+            value={this.state.surname}
+            onChange={this.handleChange}
+            label="Surname"
+            autoComplete="off"
+            errorName={this.state.errors.surname}
+            errorText="Surname is invalid"
+          />
         </div>
         <div className="form__group">
-          <label className="form__label">
-            Birthday:
-            {this.state.errors.birthday !== undefined && <span className="form__error"> Birthday is invalid</span>}
-            <input
-              className="form__field"
-              type="date"
-              name="birthday"
-              autoComplete="off"
-              value={this.state.birthday}
-              onChange={this.handleChange}
-            />
-          </label>
+          <TextField
+            type="date"
+            name="birthday"
+            value={this.state.birthday}
+            onChange={this.handleChange}
+            label="Birthday"
+            autoComplete="off"
+            errorName={this.state.errors.birthday}
+            errorText="Birthday is invalid"
+          />
         </div>
         <div className="form__group">
           <label className="form__label">
