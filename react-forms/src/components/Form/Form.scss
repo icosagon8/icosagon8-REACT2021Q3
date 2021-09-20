@@ -1,0 +1,49 @@
+.form {
+  &__group {
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__error {
+    color: red;
+  }
+
+  &__message {
+    color: green;
+    border: 2px solid green;
+    padding: 5px;
+    text-align: center;
+  }
+
+  &__field {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: 0;
+    padding: 10px;
+    margin-top: 5px;
+
+    &:focus {
+      border-color: #138cd3;
+    }
+
+    &--checkbox {
+      display: inline-block;
+      width: auto;
+      margin-right: 5px;
+    }
+  }
+
+  &__submit {
+    color: #ffffff;
+    background-color: #2288dc;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

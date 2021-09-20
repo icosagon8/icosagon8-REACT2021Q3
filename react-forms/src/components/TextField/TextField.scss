@@ -1,0 +1,23 @@
+.input {
+  &__label {
+    font-weight: bold;
+  }
+
+  &__error {
+    color: red;
+  }
+
+  &__field {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: 0;
+    padding: 10px;
+    margin-top: 5px;
+
+    &:focus {
+      border-color: #138cd3;
+    }
+  }
+}
