@@ -22,6 +22,8 @@ export const fetchCharacters = createAsyncThunk<void, PageModel>(
       const data = await response.json();
       thunkAPI.dispatch(getCharactersSuccess(data));
     } catch (error) {
+      console.log((error as Error).message);
+    } finally {
       thunkAPI.dispatch(getCharactersFailure());
     }
   }

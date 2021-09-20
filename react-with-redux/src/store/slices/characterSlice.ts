@@ -20,7 +20,6 @@ const characterSlice = createSlice({
     },
     getCharacterSuccess: (state, { payload }) => {
       state.data = payload;
-      state.isLoading = false;
     },
     getCharacterFailure: (state) => {
       state.isLoading = false;
